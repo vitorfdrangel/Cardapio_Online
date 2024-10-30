@@ -7,3 +7,21 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-red {
+  background-color: #e84f3d;
+  padding: 0px 10px;
+  font-size: 1rem;
+  line-height: 8px;
+  color: #fff;
+  border: 0px;
+}

@@ -1,9 +1,20 @@
 import classes from "./Navbar.module.css";
 
+import logo from "../images/logo.png";
+import bag from "../images/bag.png";
+
 const Navbar = () => {
   return (
     <div className={classes.navbar_container}>
-      <h1>Menu navbar...</h1>
+      <img src={logo} alt="Logotipo" className={classes.logo} />
+
+      <div className={classes.menu}>
+        <a href="#">Histórico</a>
+        <button className="btn btn-red">
+          <img src={bag} alt="Sacola" />
+          <p>Sacola</p>
+        </button>
+      </div>
     </div>
   );
 };
