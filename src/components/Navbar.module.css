@@ -10,18 +10,17 @@
 .navbar_container .logo {
   max-width: 100px;
   width: 12%;
-  padding-left: 40px;
+  padding-left: 25px;
 }
 
 .menu {
-  padding-right: 40px;
+  padding-right: 25px;
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
 .menu a {
-  font-size: 1.1rem;
   color: #000;
 }
 
