@@ -1,3 +1,6 @@
+// components
+import ProdVitrine from "../components/ProdVitrine";
+
 import classes from "./Home.module.css";
 
 const Home = () => {
@@ -10,6 +13,10 @@ const Home = () => {
           preferir, você pode pedir pelo nosso WhatsApp: (xx) XXXXX-XXXX
         </p>
       </div>
+      <ProdVitrine />
+      <ProdVitrine />
+      <ProdVitrine />
+      <ProdVitrine />
     </div>
   );
 };
