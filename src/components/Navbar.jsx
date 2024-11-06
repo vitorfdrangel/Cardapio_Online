@@ -1,7 +1,8 @@
-import classes from "./Navbar.module.css";
-
 import logo from "../images/logo.png";
-import bag from "../images/bag.png";
+
+// style
+import classes from "./Navbar.module.css";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
       <div className={classes.menu}>
         <a href="#">Histórico</a>
         <button className="btn btn-red">
-          <img src={bag} alt="Sacola" />
+          <MdOutlineShoppingBag />
           <p>Sacola</p>
         </button>
       </div>

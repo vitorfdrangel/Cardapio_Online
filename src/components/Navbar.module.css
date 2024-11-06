@@ -30,10 +30,12 @@
 
 .menu button {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 }
 
-.menu button img {
-  width: 18px;
+.menu button svg {
+  margin-top: -3px;
+  font-size: 18px;
 }
