@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // routes
 import Home from "./routes/Home.jsx";
+import Checkout from "./routes/Checkout.jsx";
+import Historico from "./routes/Historico.jsx";
 
 const route = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ const route = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "/historico",
+        element: <Historico />,
       },
     ],
   },
