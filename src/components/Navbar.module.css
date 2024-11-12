@@ -23,6 +23,7 @@
 
 .menu a {
   color: #000;
+  transition: 0.2s;
 }
 
 .menu a:hover {
@@ -30,6 +31,7 @@
 }
 
 .menu button {
+  padding: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
