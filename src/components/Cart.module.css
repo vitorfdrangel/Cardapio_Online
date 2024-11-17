@@ -1,5 +1,5 @@
 .cart_container {
-  padding: 1.5rem;
+  padding: 1.5rem 3.5rem;
   text-align: center;
 }
 
@@ -9,4 +9,26 @@
   right: 2.5rem;
   font-size: 1.2rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart_container svg:hover {
+  opacity: 0.6;
+}
+
+.cart_container .product {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e9e9e9;
+  display: flex;
+  gap: 2rem;
+}
+
+.cart_container img {
+  width: 80px;
+  height: 80px;
+}
+
+.cart_container .product_desc {
+  text-align: left;
 }
