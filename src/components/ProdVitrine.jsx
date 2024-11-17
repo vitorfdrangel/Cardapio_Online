@@ -1,3 +1,6 @@
+// hooks
+import { saveProductsLs } from "../hooks/useLocalStorage";
+
 // data
 import data from "../help/data";
 
@@ -16,7 +19,10 @@ const ProdVitrine = () => {
             <p className={classes.description}>{prod.description}</p>
             <p className={classes.price}>{prod.price}</p>
             <div>
-              <button className="btn btn-cart">
+              <button
+                className="btn btn-cart"
+                onClick={() => saveProductsLs(prod)}
+              >
                 <FaBagShopping />
                 <span>Adicionar</span>
               </button>
