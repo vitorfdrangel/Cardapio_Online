@@ -15,10 +15,12 @@ export const saveProductsLs = (prod) => {
 };
 
 // deletar itens
-export const deleteProductsLs = (prodName) => {
+export const deleteProductsLs = (prodName, setOrders) => {
   const products = getProductsLs();
 
   const newProducts = products.filter((prod) => prod.name !== prodName);
+
+  setOrders(newProducts);
 
   localStorage.setItem("products", JSON.stringify(newProducts));
 };
