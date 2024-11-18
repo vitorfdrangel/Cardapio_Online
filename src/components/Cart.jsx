@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // hooks
-import { getProductsLs } from "../hooks/useLocalStorage";
+import { getProductsLs, deleteProductsLs } from "../hooks/useLocalStorage";
 
 import { Dock } from "react-dock";
 
@@ -11,7 +11,6 @@ import { MdOutlineClose } from "react-icons/md";
 
 const Cart = ({ openSidebar, setOpenSidebar }) => {
   const [orders, setOrders] = useState([]);
-  const [total, setTotal] = useState();
 
   useEffect(() => {
     const productsLs = getProductsLs();
@@ -23,7 +22,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
       position="right"
       isVisible={openSidebar}
       fluid={false}
-      size={500}
+      size={430}
       onVisibleChange={(visible) => {
         setOpenSidebar(visible);
       }}
@@ -43,7 +42,11 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
                   <p className={classes.product_name}>{order.name}</p>
                   <p className={classes.product_desc}>{order.description}</p>
                   <p className={classes.product_price}>{order.price}</p>
-                  <button>Remover</button>
+                  <button
+                    onClick={() => deleteProductsLs(order.name, setOrders)}
+                  >
+                    Remover
+                  </button>
                 </div>
               </div>
             ))
