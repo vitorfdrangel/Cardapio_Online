@@ -16,6 +16,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
   const [orders, setOrders] = useState([]);
   const [total, setTotal] = useState();
 
+  // carregar produtos no cart
   useEffect(() => {
     const productsLs = useGetProductsLs();
     setOrders(productsLs);
@@ -30,11 +31,14 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
 
       if (ordersLs) {
         ordersLs.map((order) => {
-          const price = parseFloat(order.price);
+          const priceMod = order.price.replace(",", ".");
+          const price = parseFloat(priceMod);
 
           smtotal = smtotal + price;
         });
       }
+
+      smtotal = smtotal.toFixed(2);
     };
 
     somaTotal();
@@ -80,7 +84,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
         <div className={classes.footer_cart}>
           <div className={classes.total_cart}>
             <p>Total:</p>
-            <p>R${total.toFixed(2)}</p>
+            <p>R${total}</p>
           </div>
           <button>Finalizar Pedido</button>
         </div>
