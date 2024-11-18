@@ -14,7 +14,7 @@ import { MdOutlineClose } from "react-icons/md";
 
 const Cart = ({ openSidebar, setOpenSidebar }) => {
   const [orders, setOrders] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState();
 
   useEffect(() => {
     const productsLs = useGetProductsLs();
@@ -23,12 +23,23 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
 
   // somar total
   useEffect(() => {
-    const ordersLs = useGetProductsLs();
+    let smtotal = 0;
 
-    ordersLs.map((order) => {
-      const price = parseFloat(order.price);
-    });
-  }, [orders]);
+    const somaTotal = () => {
+      const ordersLs = useGetProductsLs();
+
+      if (ordersLs) {
+        ordersLs.map((order) => {
+          const price = parseFloat(order.price);
+
+          smtotal = smtotal + price;
+        });
+      }
+    };
+
+    somaTotal();
+    setTotal(smtotal);
+  }, [orders, openSidebar]);
 
   return (
     <Dock
@@ -69,7 +80,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
         <div className={classes.footer_cart}>
           <div className={classes.total_cart}>
             <p>Total:</p>
-            <p>R${total}</p>
+            <p>R${total.toFixed(2)}</p>
           </div>
           <button>Finalizar Pedido</button>
         </div>
