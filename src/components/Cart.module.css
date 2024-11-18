@@ -21,6 +21,11 @@
   overflow: auto;
 }
 
+.product_container .void_cart {
+  margin-top: 8rem;
+  font-size: 1.2rem;
+}
+
 .cart_container .product {
   height: 130px;
   margin: 20px auto;

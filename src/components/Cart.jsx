@@ -61,7 +61,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
 
         <div className={classes.product_container}>
           {orders.length === 0 ? (
-            <p>Seu carrinho está vazio!</p>
+            <p className={classes.void_cart}>Seu carrinho está vazio!</p>
           ) : (
             orders.map((order) => (
               <div className={classes.product} key={order.id}>
