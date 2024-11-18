@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
-
 // hooks
-import { getProductsLs, deleteProductsLs } from "../hooks/useLocalStorage";
+import { useEffect, useState } from "react";
+import {
+  useGetProductsLs,
+  useDeleteProductsLs,
+} from "../hooks/useLocalStorage";
 
+// sidebar
 import { Dock } from "react-dock";
 
 // Style
@@ -11,11 +14,32 @@ import { MdOutlineClose } from "react-icons/md";
 
 const Cart = ({ openSidebar, setOpenSidebar }) => {
   const [orders, setOrders] = useState([]);
+  const [total, setTotal] = useState();
 
   useEffect(() => {
-    const productsLs = getProductsLs();
+    const productsLs = useGetProductsLs();
     setOrders(productsLs);
   }, [openSidebar]);
+
+  // somar total
+  useEffect(() => {
+    let smtotal = 0;
+
+    const somaTotal = () => {
+      const ordersLs = useGetProductsLs();
+
+      if (ordersLs) {
+        ordersLs.map((order) => {
+          const price = parseFloat(order.price);
+
+          smtotal = smtotal + price;
+        });
+      }
+    };
+
+    somaTotal();
+    setTotal(smtotal);
+  }, [orders, openSidebar]);
 
   return (
     <Dock
@@ -36,14 +60,14 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
             <p>Seu carrinho está vazio!</p>
           ) : (
             orders.map((order) => (
-              <div className={classes.product} key={order.name}>
+              <div className={classes.product} key={order.id}>
                 <img src={order.img} alt={order.name} />
                 <div className={classes.body_product}>
                   <p className={classes.product_name}>{order.name}</p>
                   <p className={classes.product_desc}>{order.description}</p>
                   <p className={classes.product_price}>{order.price}</p>
                   <button
-                    onClick={() => deleteProductsLs(order.name, setOrders)}
+                    onClick={() => useDeleteProductsLs(order.id, setOrders)}
                   >
                     Remover
                   </button>
@@ -56,7 +80,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
         <div className={classes.footer_cart}>
           <div className={classes.total_cart}>
             <p>Total:</p>
-            <p>R$ 45,90</p>
+            <p>R${total.toFixed(2)}</p>
           </div>
           <button>Finalizar Pedido</button>
         </div>

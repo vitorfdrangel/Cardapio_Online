@@ -1,15 +1,17 @@
 import { toast } from "react-toastify";
 
 // buscar itens
-export const getProductsLs = () => {
+export const useGetProductsLs = () => {
   const products = JSON.parse(localStorage.getItem("products")) || [];
 
   return products;
 };
 
 // salvar itens
-export const saveProductsLs = (prod) => {
-  const products = getProductsLs();
+export const useSaveProductsLs = (prod) => {
+  const products = useGetProductsLs();
+
+  prod.id = `${prod.id}&${Date.now()}`;
 
   products.push(prod);
 
@@ -26,10 +28,10 @@ export const saveProductsLs = (prod) => {
 };
 
 // deletar itens
-export const deleteProductsLs = (prodName, setOrders) => {
-  const products = getProductsLs();
+export const useDeleteProductsLs = (prodId, setOrders) => {
+  const products = useGetProductsLs();
 
-  const newProducts = products.filter((prod) => prod.name !== prodName);
+  const newProducts = products.filter((prod) => prod.id !== prodId);
 
   setOrders(newProducts);
 

@@ -1,5 +1,5 @@
 // hooks
-import { saveProductsLs } from "../hooks/useLocalStorage";
+import { useSaveProductsLs } from "../hooks/useLocalStorage";
 
 // data
 import data from "../help/data";
@@ -13,7 +13,7 @@ const ProdVitrine = () => {
     <div className={classes.prodVitrine_container}>
       {data &&
         data.map((prod) => (
-          <div className={classes.prod_box} key={prod.name}>
+          <div className={classes.prod_box} key={prod.id}>
             <img src={prod.img} alt={prod.name} />
             <h2>{prod.name}</h2>
             <p className={classes.description}>{prod.description}</p>
@@ -21,7 +21,7 @@ const ProdVitrine = () => {
             <div>
               <button
                 className="btn btn-cart"
-                onClick={() => saveProductsLs(prod)}
+                onClick={() => useSaveProductsLs(prod)}
               >
                 <FaBagShopping />
                 <span>Adicionar</span>
