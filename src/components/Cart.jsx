@@ -38,7 +38,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
         });
       }
 
-      smtotal = smtotal.toFixed(2);
+      smtotal = smtotal.toFixed(2).replace(".", ",");
     };
 
     somaTotal();
