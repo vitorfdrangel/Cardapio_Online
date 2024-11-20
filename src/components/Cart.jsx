@@ -99,7 +99,9 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
             <p>Total:</p>
             <p>R${total}</p>
           </div>
-          <button onClick={finalizeOrder}>Finalizar Pedido</button>
+          <button className="btn-checkout" onClick={finalizeOrder}>
+            Finalizar Pedido
+          </button>
         </div>
       </div>
     </Dock>
