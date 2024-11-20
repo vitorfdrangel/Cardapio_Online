@@ -21,6 +21,11 @@
   overflow: auto;
 }
 
+.product_container .void_cart {
+  margin-top: 8rem;
+  font-size: 1.2rem;
+}
+
 .cart_container .product {
   height: 130px;
   margin: 20px auto;
@@ -47,6 +52,7 @@
 }
 
 .cart_container .product_desc {
+  height: 60px;
   font-size: 0.9rem;
   color: #acacac;
 }
@@ -58,8 +64,9 @@
 }
 
 .product button {
-  margin-top: 10px;
   float: right;
+  font-size: 0.8rem;
+  font-weight: 600;
   background: none;
   border: none;
   cursor: pointer;
