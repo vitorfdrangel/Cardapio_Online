@@ -93,10 +93,9 @@
   border: none;
   border-radius: none;
   cursor: pointer;
-  opacity: 0.9;
   transition: 0.2s;
 }
 
 .footer_cart button:hover {
-  opacity: 1;
+  background-color: #e93b28;
 }

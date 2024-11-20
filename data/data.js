@@ -4,7 +4,7 @@ import megaBg from "../data/img/megaBg.png";
 
 const data = [
   {
-    name: "Chesse Burger",
+    name: "Cheese Burger",
     description: "Carne, queijo, salada e molho especial",
     price: "16,90",
     img: cheeseBg,
