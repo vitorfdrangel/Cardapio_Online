@@ -2,7 +2,7 @@
 import { useSaveProductsLs } from "../hooks/useLocalStorage";
 
 // data
-import data from "../help/data";
+import data from "../../data/data";
 
 // style
 import classes from "./ProdVitrine.module.css";

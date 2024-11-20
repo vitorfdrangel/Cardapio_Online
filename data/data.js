@@ -1,6 +1,6 @@
 // images
-import cheeseBg from "./img/cheeseBg.png";
-import megaBg from "./img/megaBg.png";
+import cheeseBg from "../data/img/cheeseBg.png";
+import megaBg from "../data/img/megaBg.png";
 
 const data = [
   {
