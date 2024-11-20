@@ -4,6 +4,7 @@ import {
   useGetProductsLs,
   useDeleteProductsLs,
 } from "../hooks/useLocalStorage";
+import { useNavigate } from "react-router-dom";
 
 // sidebar
 import { Dock } from "react-dock";
@@ -16,13 +17,15 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
   const [orders, setOrders] = useState([]);
   const [total, setTotal] = useState();
 
+  const navigate = useNavigate();
+
   // carregar produtos no cart
   useEffect(() => {
     const productsLs = useGetProductsLs();
     setOrders(productsLs);
   }, [openSidebar]);
 
-  // somar total
+  // somar valor total do carrinho
   useEffect(() => {
     let smtotal = 0;
 
@@ -44,6 +47,16 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
     somaTotal();
     setTotal(smtotal);
   }, [orders, openSidebar]);
+
+  const finalizeOrder = () => {
+    if (total !== "0,00") {
+      navigate("/checkout");
+
+      setOpenSidebar(false);
+    }
+
+    return;
+  };
 
   return (
     <Dock
@@ -86,7 +99,7 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
             <p>Total:</p>
             <p>R${total}</p>
           </div>
-          <button>Finalizar Pedido</button>
+          <button onClick={finalizeOrder}>Finalizar Pedido</button>
         </div>
       </div>
     </Dock>

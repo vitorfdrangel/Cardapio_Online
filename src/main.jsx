@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // routes
 import Home from "./routes/Home.jsx";
 import Checkout from "./routes/Checkout.jsx";
-import Historico from "./routes/Historico.jsx";
+import Historic from "./routes/Historic.jsx";
 
 const route = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const route = createBrowserRouter([
       },
       {
         path: "/historico",
-        element: <Historico />,
+        element: <Historic />,
       },
     ],
   },
