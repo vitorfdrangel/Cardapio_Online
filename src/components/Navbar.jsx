@@ -14,7 +14,9 @@ const Navbar = () => {
 
   return (
     <div className={classes.navbar_container}>
-      <img src={logo} alt="Logotipo" className={classes.logo} />
+      <a href="/" className={classes.logo}>
+        <img src={logo} alt="Logotipo" />
+      </a>
 
       <div className={classes.menu}>
         <a href="#">Histórico</a>

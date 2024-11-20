@@ -8,14 +8,14 @@
   align-items: center;
 }
 
-.navbar_container .logo {
+.navbar_container .logo img {
   max-width: 100px;
-  width: 12%;
-  padding-left: 25px;
+  width: 80%;
+  padding-left: 30px;
 }
 
 .menu {
-  padding-right: 15px;
+  padding-right: 30px;
   display: flex;
   align-items: center;
   gap: 20px;
