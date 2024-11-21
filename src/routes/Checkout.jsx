@@ -2,6 +2,12 @@
 import classes from "./Checkout.module.css";
 
 const Checkout = () => {
+  // remover menu navbar
+  const evClose = new CustomEvent("closeMenu");
+  if (window.focus) {
+    dispatchEvent(evClose);
+  }
+
   return (
     <div className={classes.checkout_container}>
       <h1>Finalizar Pedido</h1>
@@ -31,7 +37,7 @@ const Checkout = () => {
 
             <label>
               <span>Celular</span>
-              <input type="number" placeholder="ex: 21983746536" required />
+              <input type="text" placeholder="ex: 21983746536" required />
             </label>
           </div>
         </div>
