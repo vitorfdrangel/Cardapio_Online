@@ -37,7 +37,7 @@ const Checkout = () => {
         </div>
 
         <div className={classes.box_container}>
-          <h3>Endereço Entrega</h3>
+          <h3>Endereço de Entrega</h3>
 
           <div className={classes.box_input}>
             <label>
@@ -70,7 +70,7 @@ const Checkout = () => {
         </div>
 
         <div className={classes.box_container}>
-          <h3>Dados Pagamento</h3>
+          <h3>Dados do Pagamento</h3>
 
           <div className={classes.checkout_values}>
             <p>Total</p>
