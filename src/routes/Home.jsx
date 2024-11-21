@@ -4,6 +4,12 @@ import ProdVitrine from "../components/ProdVitrine";
 import classes from "./Home.module.css";
 
 const Home = () => {
+  // mostrar menu navbar
+  const evShow = new CustomEvent("showMenu");
+  if (window.focus) {
+    dispatchEvent(evShow);
+  }
+
   return (
     <div>
       <div className={classes.menu_container}>

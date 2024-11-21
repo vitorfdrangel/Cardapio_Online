@@ -13,6 +13,11 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
+
+  addEventListener("showMenu", () => {
+    setShowMenu(true);
+  });
+
   return (
     <div className={classes.navbar_container}>
       <a href="/" className={classes.logo}>
