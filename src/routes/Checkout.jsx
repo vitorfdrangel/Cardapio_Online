@@ -8,6 +8,21 @@ const Checkout = () => {
     dispatchEvent(evClose);
   }
 
+  // validar somente números
+  const numValidator = (e) => {
+    const num = e.keyCode || e.which;
+
+    if (
+      (num > 47 && num < 58) ||
+      (num > 7 && num < 19) ||
+      (num > 36 && num < 41)
+    ) {
+      return true;
+    } else {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className={classes.checkout_container}>
       <h1>Finalizar Pedido</h1>
@@ -37,7 +52,13 @@ const Checkout = () => {
 
             <label>
               <span>Celular</span>
-              <input type="text" placeholder="ex: 21983746536" required />
+              <input
+                type="text"
+                placeholder="ex: 21983746536"
+                maxLength={11}
+                onKeyDown={(e) => numValidator(e)}
+                required
+              />
             </label>
           </div>
         </div>
