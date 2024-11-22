@@ -1,12 +1,12 @@
+// hooks
+import { useSetMenu } from "../hooks/useShowMenu";
+
 // style
 import classes from "./Historic.module.css";
 
 const Historic = () => {
   // mostrar menu navbar
-  const evShow = new CustomEvent("showMenu");
-  if (window.focus) {
-    dispatchEvent(evShow);
-  }
+  useSetMenu(true);
 
   return (
     <div className={classes.historic_container}>

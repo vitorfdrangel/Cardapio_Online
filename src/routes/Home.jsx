@@ -1,3 +1,6 @@
+// hooks
+import { useSetMenu } from "../hooks/useShowMenu";
+
 // components
 import ProdVitrine from "../components/ProdVitrine";
 
@@ -5,10 +8,7 @@ import classes from "./Home.module.css";
 
 const Home = () => {
   // mostrar menu navbar
-  const evShow = new CustomEvent("showMenu");
-  if (window.focus) {
-    dispatchEvent(evShow);
-  }
+  useSetMenu(true);
 
   return (
     <div>

@@ -1,12 +1,12 @@
+// hooks
+import { useSetMenu } from "../hooks/useShowMenu";
+
 // style
 import classes from "./Checkout.module.css";
 
 const Checkout = () => {
   // remover menu navbar
-  const evClose = new CustomEvent("closeMenu");
-  if (window.focus) {
-    dispatchEvent(evClose);
-  }
+  useSetMenu(false);
 
   // validar somente números
   const numValidator = (e) => {
