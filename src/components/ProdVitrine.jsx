@@ -17,7 +17,7 @@ const ProdVitrine = () => {
             <img src={prod.img} alt={prod.name} />
             <h2>{prod.name}</h2>
             <p className={classes.description}>{prod.description}</p>
-            <p className={classes.price}>{prod.price}</p>
+            <p className={classes.price}>R$ {prod.price}</p>
             <div>
               <button
                 className="btn btn-cart"
