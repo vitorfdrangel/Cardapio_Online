@@ -14,15 +14,20 @@ const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
 
+  // mostrar / remover menu
   addEventListener("showMenu", () => {
     setShowMenu(true);
   });
 
+  addEventListener("closeMenu", () => {
+    setShowMenu(false);
+  });
+
   return (
     <div className={classes.navbar_container}>
-      <a href="/" className={classes.logo}>
+      <Link to={"/"} className={classes.logo}>
         <img src={logo} alt="Logotipo" />
-      </a>
+      </Link>
 
       {showMenu && (
         <div className={classes.menu}>
@@ -34,11 +39,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <Cart
-        openSidebar={openSidebar}
-        setOpenSidebar={setOpenSidebar}
-        setShowMenu={setShowMenu}
-      />
+      <Cart openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
     </div>
   );
 };

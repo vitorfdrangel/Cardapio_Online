@@ -13,7 +13,7 @@ import { Dock } from "react-dock";
 import classes from "./Cart.module.css";
 import { MdOutlineClose } from "react-icons/md";
 
-const Cart = ({ openSidebar, setOpenSidebar, setShowMenu }) => {
+const Cart = ({ openSidebar, setOpenSidebar }) => {
   const [orders, setOrders] = useState([]);
   const [total, setTotal] = useState();
 
@@ -53,7 +53,6 @@ const Cart = ({ openSidebar, setOpenSidebar, setShowMenu }) => {
       navigate("/checkout");
 
       setOpenSidebar(false);
-      setShowMenu(false);
     }
 
     return;
