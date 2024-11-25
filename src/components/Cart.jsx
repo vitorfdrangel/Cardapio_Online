@@ -94,15 +94,17 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
           )}
         </div>
 
-        <div className={classes.footer_cart}>
-          <div className={classes.total_cart}>
-            <p>Total:</p>
-            <p>R${total}</p>
+        {orders.length !== 0 && (
+          <div className={classes.footer_cart}>
+            <div className={classes.total_cart}>
+              <p>Total:</p>
+              <p>R${total}</p>
+            </div>
+            <button className="btn-checkout" onClick={finalizeOrder}>
+              Finalizar Pedido
+            </button>
           </div>
-          <button className="btn-checkout" onClick={finalizeOrder}>
-            Finalizar Pedido
-          </button>
-        </div>
+        )}
       </div>
     </Dock>
   );

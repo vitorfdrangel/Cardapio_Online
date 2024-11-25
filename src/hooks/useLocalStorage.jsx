@@ -17,7 +17,7 @@ export const useSaveProductsLs = (prod) => {
 
   toast.success("Produto adicionado!", {
     position: "top-center",
-    autoClose: 2000,
+    autoClose: 1500,
     pauseOnFocusLoss: false,
     hideProgressBar: false,
     closeOnClick: true,
