@@ -13,7 +13,11 @@ export const useSaveProductsLs = (prod) => {
 
   prod.id = `${prod.id}&${Date.now()}`;
 
+  prod.qtd = 1;
+
   products.push(prod);
+
+  localStorage.setItem("products", JSON.stringify(products));
 
   toast.success("Produto adicionado!", {
     position: "top-center",
@@ -23,8 +27,6 @@ export const useSaveProductsLs = (prod) => {
     closeOnClick: true,
     pauseOnHover: false,
   });
-
-  localStorage.setItem("products", JSON.stringify(products));
 };
 
 // deletar itens

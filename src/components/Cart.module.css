@@ -27,9 +27,9 @@
 }
 
 .cart_container .product {
-  height: 130px;
+  height: 190px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 5px 15px;
   border: 1px solid #e9e9e9;
   display: flex;
   align-items: center;
@@ -48,17 +48,30 @@
 .cart_container .product_name {
   font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .cart_container .product_desc {
   height: 60px;
+  margin-bottom: 5px;
   font-size: 0.9rem;
   color: #acacac;
 }
 
+.cart_container .qtd_btn {
+  padding-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.cart_container .qtd_btn button {
+  padding: 2px 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
 .cart_container .product_price {
-  padding-top: 20px;
+  text-align: right;
   font-weight: bold;
   color: #e84f3d;
 }
@@ -69,6 +82,7 @@
   font-weight: 600;
   background: none;
   border: none;
+  padding-top: 8px;
   cursor: pointer;
 }
 
