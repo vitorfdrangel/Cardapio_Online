@@ -34,14 +34,11 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
 
       if (ordersLs) {
         ordersLs.map((order) => {
-          const priceMod = order.price.replace(",", ".");
-          const price = parseFloat(priceMod);
+          const price = order.price * order.qtd;
 
           smtotal = smtotal + price;
         });
       }
-
-      smtotal = smtotal.toFixed(2).replace(".", ",");
     };
 
     somaTotal();
@@ -56,6 +53,25 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
     }
 
     return;
+  };
+
+  // atualizar numero de itens
+  const setBtn = (op, order) => {
+    const products = useGetProductsLs();
+
+    products.map((prod) => {
+      if (prod.id === order.id) {
+        if (op === "+") {
+          prod.qtd++;
+        } else if (op === "-" && order.qtd > 1) {
+          prod.qtd--;
+        } else return;
+      }
+
+      setOrders(products);
+
+      localStorage.setItem("products", JSON.stringify(products));
+    });
   };
 
   return (
@@ -82,7 +98,17 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
                 <div className={classes.body_product}>
                   <p className={classes.product_name}>{order.name}</p>
                   <p className={classes.product_desc}>{order.description}</p>
-                  <p className={classes.product_price}>{order.price}</p>
+                  <div className={classes.qtd_btn}>
+                    <button onClick={() => setBtn("-", order)}>-</button>
+                    <span>{order.qtd}</span>
+                    <button onClick={() => setBtn("+", order)}>+</button>
+                  </div>
+                  <p className={classes.product_price}>
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(order.price)}
+                  </p>
                   <button
                     onClick={() => useDeleteProductsLs(order.id, setOrders)}
                   >
@@ -94,15 +120,22 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
           )}
         </div>
 
-        <div className={classes.footer_cart}>
-          <div className={classes.total_cart}>
-            <p>Total:</p>
-            <p>R${total}</p>
+        {orders.length !== 0 && (
+          <div className={classes.footer_cart}>
+            <div className={classes.total_cart}>
+              <p>Total:</p>
+              <p>
+                {new Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(total)}
+              </p>
+            </div>
+            <button className="btn-checkout" onClick={finalizeOrder}>
+              Finalizar Pedido
+            </button>
           </div>
-          <button className="btn-checkout" onClick={finalizeOrder}>
-            Finalizar Pedido
-          </button>
-        </div>
+        )}
       </div>
     </Dock>
   );
