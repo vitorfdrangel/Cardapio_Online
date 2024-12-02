@@ -86,3 +86,7 @@ input[type="number"] {
 .btn-checkout:hover {
   background-color: #e93b28;
 }
+
+.gray {
+  color: #d3d3d3;
+}

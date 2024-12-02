@@ -61,12 +61,13 @@
 .cart_container .qtd_btn {
   padding-top: 10px;
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 
 .cart_container .qtd_btn button {
-  padding: 2px 6px;
-  font-size: 14px;
+  padding: 4px 8px;
+  font-size: 16px;
   border: 1px solid #ccc;
 }
 
@@ -82,7 +83,7 @@
   font-weight: 600;
   background: none;
   border: none;
-  padding-top: 8px;
+  padding-top: 14px;
   cursor: pointer;
 }
 

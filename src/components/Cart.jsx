@@ -99,7 +99,12 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
                   <p className={classes.product_name}>{order.name}</p>
                   <p className={classes.product_desc}>{order.description}</p>
                   <div className={classes.qtd_btn}>
-                    <button onClick={() => setBtn("-", order)}>-</button>
+                    <button
+                      onClick={() => setBtn("-", order)}
+                      className={order.qtd === 1 ? "gray" : ""}
+                    >
+                      -
+                    </button>
                     <span>{order.qtd}</span>
                     <button onClick={() => setBtn("+", order)}>+</button>
                   </div>
