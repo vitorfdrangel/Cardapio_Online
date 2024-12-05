@@ -1,35 +1,36 @@
 // images
-import cheeseBg from "../data/img/cheeseBg.png";
-import megaBg from "../data/img/megaBg.png";
+import xbg from "./img/xbg.png";
+import duplobg from "./img/duplobg.png";
+import chickenbg from "./img/chickenbg.png";
 
 const data = [
   {
     name: "Cheese Burger",
     description: "Carne, queijo, salada e molho especial",
     price: 16.9,
-    img: cheeseBg,
+    img: xbg,
     id: "CB",
   },
   {
     name: "X Burger",
     description: "Carne, ovo, queijo, salada e molho especial",
     price: 18.9,
-    img: megaBg,
+    img: xbg,
     id: "XB",
   },
   {
-    name: "Mega Burger",
-    description: "2 Carnes, 2 ovos, queijo, presunto, salada e molho especial",
-    price: 22.9,
-    img: megaBg,
-    id: "MB",
+    name: "Duplo Burger",
+    description: "2 Carnes, ovo, queijo, presunto, salada e molho especial",
+    price: 24.9,
+    img: duplobg,
+    id: "DB",
   },
   {
-    name: "Triplo Burger",
-    description: "3 Carnes, 3 ovos, queijo, presunto, salada e molho especial",
-    price: 26.9,
-    img: megaBg,
-    id: "TB",
+    name: "Chicken Burger",
+    description: "Empanado de frango, queijo, salada e molho especial",
+    price: 22.9,
+    img: chickenbg,
+    id: "CKB",
   },
 ];
 
