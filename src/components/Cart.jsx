@@ -27,9 +27,9 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
 
   // somar valor total do carrinho
   useEffect(() => {
-    let smtotal = 0;
-
     const somaTotal = () => {
+      let smtotal = 0;
+
       const ordersLs = useGetProductsLs();
 
       if (ordersLs) {
@@ -39,10 +39,11 @@ const Cart = ({ openSidebar, setOpenSidebar }) => {
           smtotal = smtotal + price;
         });
       }
+
+      setTotal(smtotal);
     };
 
     somaTotal();
-    setTotal(smtotal);
   }, [orders, openSidebar]);
 
   const finalizeOrder = () => {
